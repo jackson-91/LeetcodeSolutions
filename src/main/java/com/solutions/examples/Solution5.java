@@ -1,9 +1,10 @@
 package com.solutions.examples;
 
 /**
- * @author  <a href="mailto:jackson19910303@gmail.com">Jackson</a>
  *
  * tips: 中心扩展法
+ *
+ * @author  <a href="mailto:jackson19910303@gmail.com">Jackson</a>
  *
  * @see <a href="https://leetcode-cn.com/problems/longest-palindromic-substring/">5. 最长回文子串</a>
  * @see <a href="https://leetcode.com/problems/longest-palindromic-substring/">5. Longest Palindromic Substring</a>
@@ -26,12 +27,12 @@ public class Solution5 {
 
     /**
      * 中心为一位字符向两边扩展
-     * @param s
-     * @param position
-     * @return
+     * @param s 原始字符串
+     * @param position 中心位置
+     * @return 由中心位置扩展的最长字符串
      */
     public String findOddPalindrome(String s, Integer position) {
-        String tmpOddString = new Character(s.charAt(position)).toString();
+        String tmpOddString = Character.toString(s.charAt(position));
         Integer offset = 0;
         for (;position-offset>=0 && position+offset<=s.length()-1; offset++) {
             if (s.charAt(position-offset) == s.charAt(position+offset)) {
@@ -47,16 +48,16 @@ public class Solution5 {
 
     /**
      * 中心为两位字符向两边扩展
-     * @param s
-     * @param position
-     * @return
+     * @param s 原始字符串
+     * @param position 靠左侧的中心位置
+     * @return 由中心位置扩展的最长字符串
      */
     public String findEvenPalindrome(String s, Integer position) {
         if (position+1 > s.length()-1) {
-            return new Character(s.charAt(position)).toString();
+            return Character.toString(s.charAt(position));
         }
         if (s.charAt(position) != s.charAt(position+1)) {
-            return new Character(s.charAt(position)).toString();
+            return Character.toString(s.charAt(position));
         }
         String tmpEvenString = s.substring(position, position+2);
         Integer offset = 0;
