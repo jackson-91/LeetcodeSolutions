@@ -6,6 +6,7 @@ package com.solutions.examples;
  * S(n) = Math.min(S(n-2)+C(n-2), S(n-1)+C(n-1))
  * S(n-2) = S(n-1)
  * S(n-1) = S(n)
+ * S(n)表示爬到第n阶楼梯所花费的体力
  *
  * @author  <a href="mailto:jackson19910303@gmail.com">Jackson</a>
  *
